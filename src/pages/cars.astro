@@ -1,0 +1,17 @@
+---
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "../components/PlotFigure.astro";
+import cars from "../assets/cars.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <h1>Plot + Astro</h1>
+    <PlotFigure
+        options={{
+            marks: [
+                Plot.barY(cars, { x: "year", y: "0-60 mph (s)" }),
+            ],
+        }}
+    />
+</Layout>
